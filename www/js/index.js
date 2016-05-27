@@ -1,5 +1,5 @@
 var SERVER 	= 	"192.168.11.5";
-var JOB 	=	"wificaster";
+var JOB 	=	"live";
 var STREAM	= 	"stream1"; 
 var PayPal = true;
 var UjAblak;
