@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="hu.e-let.goool" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Goool</name>
+<widget id="hu.e-let.wificaster" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>WifiCaster</name>
     <description>
-        Dream4Sys Goool
+        Dream4Sys WifiCaster
     </description>
     <author href="http://e-let.hu" email="e-let@e-let.hu">e-LET Kft </author>
   <content src="index.html" />
