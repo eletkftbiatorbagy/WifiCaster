@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>WifiCaster</title>
+        
+        <script type="text/javascript" src="js/index.js"></script>
+        
+    </head>
+    <body>
+        <div id="FoMenu">
+        	<img id="logo"  	src="img/menu_logo.png">
+        	
+        	<img id="live" 		src="img/live.png" ontouchstart="gol('Stream');">
+        	<span style="top:63vh;">Élő videó</span>
+        	
+        	<!-- <img id="paypal"    src="img/paypal.png" ontouchstart="PayPal=true;">  -->
+        </div>
+        
+        <div id="Replay" style="display:none;">
+        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('Replay').style.display='none';document.getElementById('FoMenu').style.display='block';">
+        	<h1>Visszajátszások</h1>
+			<hatter></hatter>
+			<scroll id="lista">
+				<ul>
+					<li class="film" ontouchstart="vod(this);" film="sample.mp4">
+						<img src="img/film.png">
+						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
+						<cim>A vendégcsapat gólja</cim>
+						<info>24. perc</info>
+					</li>
+					<li class="film">
+						<img src="img/film.png">
+						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
+						<cim>Kihagyott helyzet</cim>
+						<info>28. perc</info>
+					</li>
+					<li class="film">
+						<img src="img/film.png">
+						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
+						<cim>Egyenlítő gól</cim>
+						<info>49. perc</info>
+					</li>
+					<li class="film">
+						<img src="img/film.png">
+						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
+						<cim>Kiállítás</cim>
+						<info>53. perc</info>
+					</li>
+					<li class="film">
+						<img src="img/film.png">
+						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
+						<cim>Hatalmas lövés, majdnem gól</cim>
+						<info>61. perc</info>
+					</li>
+					<li class="film">
+						<img src="img/film.png">
+						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
+						<cim>2:1 a hazaiak javára</cim>
+						<info>74. perc</info>
+					</li>
+				</ul>
+			</scroll>	
+        </div>
+        
+        
+        
+        
+        
+        <div id="Stream" style="display:none;">
+        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('stream1').innerHTML='';document.getElementById('Stream').style.display='none';document.getElementById('FoMenu').style.display='block';">
+        	<h1>Élő adás</h1>
+        	<film id="stream1"></film>
+			<span>
+				Élő kamerakép
+			</span>
+        </div>
+        		
+        <div id="StreamPP" style="display:none;">
+        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('StreamPP').style.display='none';document.getElementById('FoMenu').style.display='block';">
+        	<h1>Élő adás</h1>
+        	<p>
+        		A tartalom megtekintéséhez előfizetésre van szükség.<br>
+        		Előfizetni bankkártyával a PayPal szolgáltatáson keresztül tud.
+        	</p>
+        	<img class="paypal" src="img/paypal.png">
+        </div>
+        
+        
+        
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>
