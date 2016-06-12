@@ -10,75 +10,37 @@
         <title>WifiCaster</title>
         
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/ajax.js"></script>
         
     </head>
-    <body>
-        <div id="FoMenu">
+    <body onload="Init();">
+        <div id="FoMenu" style="display:block;">
         	<img id="logo"  	src="img/menu_logo.png">
+        	<title id="Musor"></title>
+        	<div id="StreamLista">
         	
-        	<img id="live" 		src="img/live.png" ontouchstart="gol('Stream');">
-        	<span style="top:63vh;">Élő videó</span>
+        	</div>
         	
         	<!-- <img id="paypal"    src="img/paypal.png" ontouchstart="PayPal=true;">  -->
         </div>
         
-        <div id="Replay" style="display:none;">
-        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('Replay').style.display='none';document.getElementById('FoMenu').style.display='block';">
-        	<h1>Visszajátszások</h1>
-			<hatter></hatter>
-			<scroll id="lista">
-				<ul>
-					<li class="film" ontouchstart="vod(this);" film="sample.mp4">
-						<img src="img/film.png">
-						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
-						<cim>A vendégcsapat gólja</cim>
-						<info>24. perc</info>
-					</li>
-					<li class="film">
-						<img src="img/film.png">
-						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
-						<cim>Kihagyott helyzet</cim>
-						<info>28. perc</info>
-					</li>
-					<li class="film">
-						<img src="img/film.png">
-						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
-						<cim>Egyenlítő gól</cim>
-						<info>49. perc</info>
-					</li>
-					<li class="film">
-						<img src="img/film.png">
-						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
-						<cim>Kiállítás</cim>
-						<info>53. perc</info>
-					</li>
-					<li class="film">
-						<img src="img/film.png">
-						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
-						<cim>Hatalmas lövés, majdnem gól</cim>
-						<info>61. perc</info>
-					</li>
-					<li class="film">
-						<img src="img/film.png">
-						<mecss>Puskás FC  -  Pannónia Allstars</mecss>
-						<cim>2:1 a hazaiak javára</cim>
-						<info>74. perc</info>
-					</li>
-				</ul>
-			</scroll>	
+        <div id="Wifi" style="display:none;">
+        	<img id="logo"  	src="img/menu_logo.png">
+        	<p style="top:35%;">
+        		Az Ön készüléke nem a <span style="color:yellow" id="WifiZona">WifiCaster</span> nevű hálózathoz kapcsolódik.<br>
+        		Ellenőrizze a wifi beállításait és próbálja meg újra!
+        	</p>
+        	<div id="wifi_gomb" ontouchstart="wifi_check()">Wifi keresése</div>
+        	
         </div>
         
         
-        
-        
-        
         <div id="Stream" style="display:none;">
-        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('stream1').innerHTML='';document.getElementById('Stream').style.display='none';document.getElementById('FoMenu').style.display='block';">
+        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('video_stream').innerHTML='';document.getElementById('Stream').style.display='none';document.getElementById('FoMenu').style.display='block';">
         	<h1>Élő adás</h1>
-        	<film id="stream1"></film>
-			<span>
-				Élő kamerakép
-			</span>
+        	<film id="stream"></film>
+			<div id="stream_nev"></div>
+			<div id="stream_musor"></div>
         </div>
         		
         <div id="StreamPP" style="display:none;">

@@ -2,19 +2,30 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
+@font-face {
+    font-family: Aero;
+    src: url(Aeroportal.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Aero;
+    src: url(Aeroportal_Medium.ttf);
+    font-weight: "bold";
+}
+
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-family: Aero;
     font-size:12px;
     height:100%;
     margin:0px;
     padding:0px;
     text-transform:smallcaps;
     width:100%;
-    background : url('../img/menu_hatter.png');
+    background: linear-gradient(to bottom, #a9f7ff 0%,#2989d8 50%,#207cca 74%,#7db9e8 100%);
     background-size: auto 100vh;
 }
 
@@ -52,59 +63,117 @@ body {
 	border-radius : 2vw;
 	border: 0.5vw solid #f3d3c5;
 }
+#wifi_gomb {
+	position:absolute;
+	left:35%;
+	width:30%;
+	bottom:15%;
+	font-size: 5vh;
+	font-family: Verdana;
+	text-align:center;
+	background: #dadaff;
+	padding:2vw;
+	border-radius : 2vw;
+	border: 0.5vw solid #5353a5;
+}
 
 .back {
 	position:absolute;
 	top:1%;
 	left:1%;
-	height:10vh;
+	height:8vh;
 }
 h1{
 	position:absolute;
 	right:1vw;
 	top:1.3vh;
-	font: 8vh Verdana;
+	font-size: 6vh;
 	color:#BB3A25;
 	text-shadow: 3px 3px #F6E500;
 	text-align:right;
 	background: #ffffff;
 	opacity: 0.85;
-	border-radius: 3vh;
+	--border-radius: 3vh;
 	padding:2vh;
+	padding-bottom:1vh;
 }
 
 p {
 	position:absolute;
-	left:10%;
-	right:10%;
+	left:7%;
+	right:7%;
 	top: 25%;
 	bottom:50%%;
 	font: 6vh Verdana;
-	color:#FB2A25;
+	color:#FB6A65;
 	text-shadow: 2px 2px #063500;
+}
+
+#StreamLista {
+	position:absolute;
+	bottom: 10vh;
+	left:7vw;
+	right:7vw;
+	display:block;
+}
+#StreamLista li {
+	float:left;
+	
+}
+#StreamLista li img {
+	width: 24vw;
+	margin:2vh 2vw;
+	margin-bottom:1vh;
+	border: 0.4vh solid #f7d346;
+	border-radius : 3vh;
+}
+#StreamLista h2 {
+	text-align:center;
+	font-size: 5vh;
+	margin-bottom:1vh;
+	width:100%;
+	height:5vh;
+	color: #f7d346;
+	border-bottom: 0.3vh solid #f7d346;
+}
+#StreamLista li h3 {
+	text-align:center;
+	font-size: 3vh;
+	margin-bottom:1vh;
 }
 
 film {
 	position: absolute;
-	top:18%;
-	left:3%;
-	width:94%;
+	top:14%;
+	left:1%;
+	width:98%;
 }
 video {
 	width: 100%;
 	height:100%;
 }
 
-span {
+#stream_nev {
 	position:absolute;
 	left:10%;
 	right:10%;
-	bottom: 3%;
-	font: 6vh Verdana;
+	bottom: 13%;
+	font-size: 6vh;
 	color:#ffCA25;
-	text-shadow: 2px 2px #F00000;
+	--text-shadow: 2px 2px #F00000;
 	text-align:center;
 }
+#stream_musor {
+	position:absolute;
+	left:10%;
+	right:10%;
+	bottom: 5%;
+	font-size: 6vh;
+	color:##f7d346;
+	--text-shadow: 2px 2px #F00000;
+	text-align:center;
+}
+
 
 .paypal {
 	position:absolute;
