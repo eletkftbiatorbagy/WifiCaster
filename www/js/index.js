@@ -1,4 +1,4 @@
-var SERVER 		= 	"xstream.hu";
+var SERVER 		= 	"dream4sys.xstream.hu";
 var PHP_SERVER 	= 	"wificaster.xstream.hu";
 var WifiZona 	=  	"XStream 2.4GHz";
 var wifi = WifiZona;							// a webes debughoz
