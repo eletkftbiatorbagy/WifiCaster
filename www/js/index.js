@@ -1,8 +1,8 @@
 var SERVER 		= 	"dream4sys.xstream.hu";
+var STREAM_APP 	=	"dream4sys";
 var PHP_SERVER 	= 	"wificaster.xstream.hu";
 var WifiZona 	=  	"XStream 2.4GHz";
 var wifi = WifiZona;							// a webes debughoz
-var JOB 	=	"live";
 var PayPal = true;
 var UjAblak;
 var myScroll;
@@ -81,7 +81,7 @@ function go(ablak,streamtipus,stream,musor,nev)
 					if (!PayPal) { return; }
 					
 					if (UjAblak==="Stream") {
-						document.getElementById("stream").innerHTML = '<video id="video_stream" controls autoplay><source src="'+streamtipus+'://'+SERVER+':1935/'+JOB+'/'+stream+(streamtipus=='http'?'/playlist.m3u8':'')+'" autoplay="true"></video>';
+						document.getElementById("stream").innerHTML = '<video id="video_stream" controls autoplay><source src="'+streamtipus+'://'+SERVER+':1935/'+STREAM_APP+'/'+stream+(streamtipus=='http'?'/playlist.m3u8':'')+'" autoplay="true"></video>';
 						document.getElementById("stream_nev").innerHTML = nev;
 						document.getElementById("stream_musor").innerHTML = musor;
 					}
