@@ -24,7 +24,7 @@ var app = {
 
 function Init()
 {
-	
+	console.log("- Init -");
 	document.getElementById("wifi").innerHTML=navigator.userAgent;
 	if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) { wifi_check(); } else { document.getElementById("wifi").innerHTML="Wifi : "+wifi; server_update(); }	
 }
@@ -114,6 +114,6 @@ function go(ablak,streamtipus,stream,musor,nev)
 // 					default: 	ccolor="ffa0a0"; 	break;
 // 				}
 // 				if (level > 0) { document.getElementById(cpanel).childNodes[1].innerHTML = document.getElementById(cpanel).childNodes[1].innerHTML.substr(-5000) + timestamp + "<span>" + message + "</span><br>"; }
- 				document.getElementById("StreamLista").innerHTML += "<span style='color:white;'>"+timestamp + "</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>"+message + "</span><br>";
+ 				document.getElementById("logs").innerHTML += "<span style='color:white;'>"+timestamp + "</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>"+message + "</span><br>";
  			};
 	})();
