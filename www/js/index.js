@@ -6,7 +6,7 @@ var wifi = WifiZona;								// a webes DEBUG-hoz kell csak
 var PayPal = true;
 var UjAblak;
 var myScroll;
-var app;
+var dev = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;		// app vagy browser ?
 var InitOk = false;
 
 var app = {
@@ -27,11 +27,24 @@ var app = {
 function Init()
 {
 	if (InitOk) { return; }
-	app = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;		// app vagy browser ?
-	console.log("app = "+app);
-	console.log("userAgent = "+navigator.userAgent);
+	dev = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;		// app vagy browser ?
+	console.log("device = "+dev);
+	//console.log("userAgent = "+navigator.userAgent);
 	console.log("- Init -");
-	if (app) 
+	
+	var wifi_ssid = function(ssid)
+	{
+		console.log("wifi check done.");
+		wifi = ssid;
+		console.log("wifi connection = "+wifi);
+		document.getElementById("wifi").innerHTML="Wifi csatlakoztatva : "+wifi;
+		if (wifi.substr(0,WifiZona.length)===WifiZona)
+		{	document.getElementById("FoMenu").style.display="block";	document.getElementById("Wifi").style.display="none"; server_update();  }
+		else
+		{ 	document.getElementById("WifiZona").innerHTML=WifiZona; document.getElementById("Wifi").style.display="block";		document.getElementById("FoMenu").style.display="none";	 }
+	};
+	
+	if (dev) 
 	{ 
 		console.log("wifi check"); 
 		WifiWizard.getCurrentSSID(wifi_ssid,error);
@@ -44,17 +57,7 @@ function Init()
 
 var error=function(msg) {};
 
-var wifi_ssid = function(ssid)
-{
-	console.log("wifi check done.");
-	wifi = ssid;
-	console.log("wifi connection = "+wifi);
-	document.getElementById("wifi").innerHTML="Wifi csatlakoztatva : "+wifi;
-	if (wifi.substr(0,WifiZona.length)===WifiZona)
-	{	document.getElementById("FoMenu").style.display="block";	document.getElementById("Wifi").style.display="none"; server_update();  }
-	else
-	{ 	document.getElementById("WifiZona").innerHTML=WifiZona; document.getElementById("Wifi").style.display="block";		document.getElementById("FoMenu").style.display="none";	 }
-};
+
 
 
 function server_update()
