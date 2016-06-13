@@ -36,7 +36,7 @@
         
         
         <div id="Stream" style="display:none;">
-        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('video_stream').innerHTML='';document.getElementById('Stream').style.display='none';document.getElementById('FoMenu').style.display='block';">
+        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('video_stream').pause(); document.getElementById('video_stream').innerHTML='';document.getElementById('Stream').style.display='none';document.getElementById('FoMenu').style.display='block';">
         	<h1>Élő adás</h1>
         	<film id="stream"></film>
 			<div id="stream_nev"></div>

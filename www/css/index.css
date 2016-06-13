@@ -79,14 +79,14 @@ body {
 
 .back {
 	position:absolute;
-	top:1%;
+	top:2%;
 	left:1%;
 	height:8vh;
 }
 h1{
 	position:absolute;
 	right:1vw;
-	top:1.3vh;
+	top:1.8vh;
 	font-size: 6vh;
 	color:#BB3A25;
 	text-shadow: 3px 3px #F6E500;
@@ -144,7 +144,7 @@ p {
 
 film {
 	position: absolute;
-	top:14%;
+	bottom:12%;
 	left:1%;
 	width:98%;
 }
@@ -157,8 +157,8 @@ video {
 	position:absolute;
 	left:10%;
 	right:10%;
-	bottom: 13%;
-	font-size: 6vh;
+	bottom: 6%;
+	font-size: 5vh;
 	color:#ffCA25;
 	--text-shadow: 2px 2px #F00000;
 	text-align:center;
@@ -167,8 +167,8 @@ video {
 	position:absolute;
 	left:10%;
 	right:10%;
-	bottom: 5%;
-	font-size: 6vh;
+	bottom: 1%;
+	font-size: 5vh;
 	color:##f7d346;
 	--text-shadow: 2px 2px #F00000;
 	text-align:center;
