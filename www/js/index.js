@@ -31,7 +31,13 @@ function Init()
 	console.log("app = "+app);
 	console.log("userAgent = "+navigator.userAgent);
 	console.log("- Init -");
-	if (app) { console.log("wifi check"); WifiWizard.getCurrentSSID(wifi_ssid,error); } else { document.getElementById("wifi").innerHTML="Wifi : "+wifi; server_update(); }	
+	if (app) 
+	{ 
+		console.log("wifi check"); 
+		WifiWizard.getCurrentSSID(wifi_ssid,error);
+		window.plugins.insomnia.keepAwake(); 
+	} 
+	else { document.getElementById("wifi").innerHTML="Wifi : "+wifi; server_update(); }	
 	
 	InitOk = true;
 }
