@@ -24,13 +24,14 @@ var app = {
 
 function Init()
 {
-	if (window.device) { wifi_check(); } else { server_update(); }	
+	if (window.device) { wifi_check(); } else { document.getElementById("wifi").innerHTML="Wifi : "+wifi; server_update(); }	
 }
 
 
 function wifi_check()
 {
 	wifi = WifiWizard.getCurrentSSID(); 
+	document.getElementById("wifi").innerHTML="Wifi : "+wifi;
 	if (wifi.substr(0,WifiZona.length)===WifiZona)
 	{	document.getElementById("FoMenu").style.display="block";	document.getElementById("Wifi").style.display="none"; server_update();  }
 	else
@@ -46,7 +47,7 @@ function server_update()
 function statusz_callback(resp)
 {
 	var data = JSON.parse(resp);
-	
+	console.log(resp);
 	//<img id="live" 		src="img/live.png" ontouchstart="go('Stream');">
     //<nev style="top:63vh;">Élő videó</nev>
     
