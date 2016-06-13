@@ -24,7 +24,7 @@ var app = {
 
 function Init()
 {
-	console.log(navigator.userAgent);
+	
 	document.getElementById("wifi").innerHTML=navigator.userAgent;
 	if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) { wifi_check(); } else { document.getElementById("wifi").innerHTML="Wifi : "+wifi; server_update(); }	
 }
@@ -50,7 +50,6 @@ function server_update()
 function statusz_callback(resp)
 {
 	var data = JSON.parse(resp);
-	console.log(resp);
 	//<img id="live" 		src="img/live.png" ontouchstart="go('Stream');">
     //<nev style="top:63vh;">Élő videó</nev>
     document.getElementById("wifi").innerHTML="Wifi csatlakoztatva : "+wifi;
@@ -105,8 +104,8 @@ function go(ablak,streamtipus,stream,musor,nev)
 // 				}
 // 				var ccolor = "";
 // 				var cpanel = CONSOLE_ID[level];
-// 				var t = new Date();
-// 				var timestamp = "<time>" + t.getFullYear() + "-" + ("0" + (t.getMonth() + 1)).slice(-2) + "-" + ("0" + (t.getDate() + 1)).slice(-2) + "&nbsp;&nbsp;&nbsp" + ("0"+t.getHours()).slice(-2) + ":" + ("0"+t.getMinutes()).slice(-2) + ":" + ("0"+t.getSeconds()).slice(-2) + "</time>";
+ 				var t = new Date();
+ 				var timestamp = "<time>" + t.getFullYear() + "-" + ("0" + (t.getMonth() + 1)).slice(-2) + "-" + ("0" + (t.getDate() + 1)).slice(-2) + "&nbsp;&nbsp;&nbsp" + ("0"+t.getHours()).slice(-2) + ":" + ("0"+t.getMinutes()).slice(-2) + ":" + ("0"+t.getSeconds()).slice(-2) + "</time>";
 // 				switch (level)
 // 				{
 // 					case 1:		ccolor="lime"; 		break;
@@ -115,6 +114,6 @@ function go(ablak,streamtipus,stream,musor,nev)
 // 					default: 	ccolor="ffa0a0"; 	break;
 // 				}
 // 				if (level > 0) { document.getElementById(cpanel).childNodes[1].innerHTML = document.getElementById(cpanel).childNodes[1].innerHTML.substr(-5000) + timestamp + "<span>" + message + "</span><br>"; }
-// 				if (document.getElementById(cpanel).childNodes[1]) { document.getElementById("CONSOLE_LOG").childNodes[1].innerHTML = document.getElementById("CONSOLE_LOG").childNodes[1].innerHTML.substr(-5000) + timestamp + "<span style='color:"+ccolor+";'>"+message + "</span><br>"; }
+ 				document.getElementById("StreamLista").innerHTML += "<span style='color:white;'>"+timestamp + "</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>"+message + "</span><br>";
  			};
 	})();
