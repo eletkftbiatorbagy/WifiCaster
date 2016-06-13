@@ -31,16 +31,16 @@ function Init()
 	console.log("app = "+app);
 	console.log("userAgent = "+navigator.userAgent);
 	console.log("- Init -");
-	if (app) { WifiWizard.getCurrentSSID(wifi_ssid,error); } else { document.getElementById("wifi").innerHTML="Wifi : "+wifi; server_update(); }	
+	if (app) { console.log("wifi check"); WifiWizard.getCurrentSSID(wifi_ssid,error); } else { document.getElementById("wifi").innerHTML="Wifi : "+wifi; server_update(); }	
 	
 	InitOk = true;
 }
 
-function error() {}
+var error=function(msg) {};
 
-function wifi_ssid(ssid)
+var wifi_ssid = function(ssid)
 {
-	console.log("wifi check");
+	console.log("wifi check done.");
 	wifi = ssid;
 	console.log("wifi connection = "+wifi);
 	document.getElementById("wifi").innerHTML="Wifi csatlakoztatva : "+wifi;
@@ -48,7 +48,7 @@ function wifi_ssid(ssid)
 	{	document.getElementById("FoMenu").style.display="block";	document.getElementById("Wifi").style.display="none"; server_update();  }
 	else
 	{ 	document.getElementById("WifiZona").innerHTML=WifiZona; document.getElementById("Wifi").style.display="block";		document.getElementById("FoMenu").style.display="none";	 }
-}
+};
 
 
 function server_update()
