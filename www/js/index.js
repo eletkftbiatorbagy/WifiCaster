@@ -43,6 +43,7 @@ function wifi_check()
 
 function server_update()
 {
+	document.getElementById("wifi").innerHTML="Szerver adatok lekérése";
 	ajax_hivas("http://"+PHP_SERVER+"/code/server.php?rnd="+Math.random(),"statusz_callback","data");
 }
 
@@ -52,7 +53,7 @@ function statusz_callback(resp)
 	console.log(resp);
 	//<img id="live" 		src="img/live.png" ontouchstart="go('Stream');">
     //<nev style="top:63vh;">Élő videó</nev>
-    
+    document.getElementById("wifi").innerHTML="Wifi csatlakoztatva : "+wifi;
     for (var w=0; w < data.length; w++)
     {
     	if (data[w].wifi === wifi)
