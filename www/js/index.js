@@ -31,16 +31,17 @@ function Init()
 	console.log("app = "+app);
 	console.log("userAgent = "+navigator.userAgent);
 	console.log("- Init -");
-	if (app) { wifi_check(); } else { document.getElementById("wifi").innerHTML="Wifi : "+wifi; server_update(); }	
+	if (app) { WifiWizard.getCurrentSSID(wifi_ssid,error); } else { document.getElementById("wifi").innerHTML="Wifi : "+wifi; server_update(); }	
 	
 	InitOk = true;
 }
 
+function error() {}
 
-function wifi_check()
+function wifi_ssid(ssid)
 {
 	console.log("wifi check");
-	wifi = WifiWizard.getCurrentSSID();
+	wifi = ssid;
 	console.log("wifi connection = "+wifi);
 	document.getElementById("wifi").innerHTML="Wifi csatlakoztatva : "+wifi;
 	if (wifi.substr(0,WifiZona.length)===WifiZona)
