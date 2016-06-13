@@ -1,7 +1,7 @@
 var SERVER 		= 	"dream4sys.xstream.hu";			// Wowza szerver elérése
 var STREAM_APP 	=	"dream4sys";					// Wowza application név
 var PHP_SERVER 	= 	"wificaster.xstream.hu";		// adat szerver elérhetősége
-var WifiZona 	=  	"XStream 2.4GHz";				// wifi nevének előtagja   pl:   wificaster  ==  wificaster_konferencia    vagy  wificaster_focimeccs
+var WifiZona 	=  	"XStream";				// wifi nevének előtagja   pl:   wificaster  ==  wificaster_konferencia    vagy  wificaster_focimeccs
 var wifi = WifiZona;								// a webes DEBUG-hoz kell csak
 var PayPal = true;
 var UjAblak;
