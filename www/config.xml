@@ -23,7 +23,7 @@
     <preference name="android-minSdkVersion" value="14" />
     <preference name="android-installLocation" value="auto" />
     
-    
+     <icon src="res/icon.png" />
     
     <platform name="android">
         <!--
