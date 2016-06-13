@@ -17,7 +17,7 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     onDeviceReady: function() {
-    	
+    	myScroll =  new IScroll('#LOGS');
   		Init();	
     }
 };
