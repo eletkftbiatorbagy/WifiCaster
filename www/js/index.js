@@ -6,7 +6,7 @@ var wifi = WifiZona;								// a webes DEBUG-hoz kell csak
 var PayPal = true;
 var UjAblak;
 var myScroll;
-
+var app;
 
 var app = {
     // Application Constructor
@@ -17,6 +17,7 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     onDeviceReady: function() {
+    	
   		Init();	
     }
 };
@@ -24,9 +25,10 @@ var app = {
 
 function Init()
 {
+	app = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;		// app vagy browser ?
 	console.log("- Init -");
 	document.getElementById("wifi").innerHTML=navigator.userAgent;
-	if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) { wifi_check(); } else { document.getElementById("wifi").innerHTML="Wifi : "+wifi; server_update(); }	
+	if (app) { wifi_check(); } else { document.getElementById("wifi").innerHTML="Wifi : "+wifi; server_update(); }	
 }
 
 
