@@ -24,7 +24,8 @@ var app = {
 
 function Init()
 {
-	if (window.device) { wifi_check(); } else { document.getElementById("wifi").innerHTML="Wifi : "+window.device; server_update(); }	
+	console.log(navigator.userAgent);
+	if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) { wifi_check(); } else { document.getElementById("wifi").innerHTML="Wifi : "+wifi; server_update(); }	
 }
 
 
