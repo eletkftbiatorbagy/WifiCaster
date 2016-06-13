@@ -26,15 +26,18 @@ var app = {
 function Init()
 {
 	app = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;		// app vagy browser ?
+	console.log("app = "+app);
+	console.log("userAgent = "+navigator.userAgent);
 	console.log("- Init -");
-	document.getElementById("wifi").innerHTML=navigator.userAgent;
 	if (app) { wifi_check(); } else { document.getElementById("wifi").innerHTML="Wifi : "+wifi; server_update(); }	
 }
 
 
 function wifi_check()
 {
-	wifi = WifiWizard.getCurrentSSID(); 
+	console.log("wifi check");
+	wifi = WifiWizard.getCurrentSSID();
+	console.log("wifi connection = "+wifi);
 	document.getElementById("wifi").innerHTML="Wifi csatlakoztatva : "+wifi;
 	if (wifi.substr(0,WifiZona.length)===WifiZona)
 	{	document.getElementById("FoMenu").style.display="block";	document.getElementById("Wifi").style.display="none"; server_update();  }
