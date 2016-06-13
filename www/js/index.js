@@ -15,7 +15,7 @@ var app = {
         this.bindEvents();
     },
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        document.addEventListener('deviceready', this.onDeviceReady, false); console.log("addevent deviceReady");
     },
     onDeviceReady: function() {
     	myScroll =  new IScroll('#LOGS');
