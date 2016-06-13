@@ -25,6 +25,7 @@ var app = {
 function Init()
 {
 	console.log(navigator.userAgent);
+	document.getElementById("wifi").innerHTML="Wifi csatlakoztatva : "+wifi;
 	if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) { wifi_check(); } else { document.getElementById("wifi").innerHTML="Wifi : "+wifi; server_update(); }	
 }
 
