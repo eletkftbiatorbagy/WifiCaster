@@ -7,6 +7,7 @@ var PayPal = true;
 var UjAblak;
 var myScroll;
 var app;
+var InitOk = false;
 
 var app = {
     // Application Constructor
@@ -25,11 +26,14 @@ var app = {
 
 function Init()
 {
+	if (InitOk) { return; }
 	app = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;		// app vagy browser ?
 	console.log("app = "+app);
 	console.log("userAgent = "+navigator.userAgent);
 	console.log("- Init -");
 	if (app) { wifi_check(); } else { document.getElementById("wifi").innerHTML="Wifi : "+wifi; server_update(); }	
+	
+	InitOk = true;
 }
 
 
