@@ -15,9 +15,9 @@
          
         
     </head>
-    <body>
+    <body onload="Init();">
         <div id="FoMenu" style="display:block;">
-        	<img id="logo"  	src="img/menu_logo.png" onclick="document.getElementById('FoMenu').style.display='none';document.getElementById('LOG').style.display='block'; myScroll = new IScroll('#LOGS');">
+        	<img id="logo"  	src="img/menu_logo.png">
         	<div id="wifi"></div>
         	<title id="Musor"></title>
         	<div id="StreamLista">
@@ -25,15 +25,17 @@
         	</div>
         	
         	<!-- <img id="paypal"    src="img/paypal.png" ontouchstart="PayPal=true;">  -->
+        	<div style="position:absolute;right:0;bottom:0;width:5%;height:5%;"  onclick="document.getElementById('FoMenu').style.display='none';document.getElementById('LOG').style.display='block'; myScroll = new IScroll('#LOGS');"></div>
         </div>
         
         <div id="Wifi" style="display:none;">
-        	<img id="logo"  style="left:70%;"	src="img/menu_logo.png">
+        	<img id="logo"  src="img/menu_logo.png">
+        	<div id="wifi2"></div>
         	<p style="top:35%;">
         		Az Ön készüléke nem a <span style="color:yellow" id="WifiZona">WifiCaster</span> nevű hálózathoz kapcsolódik.<br>
         		Ellenőrizze a wifi beállításait és próbálja meg újra!
         	</p>
-        	<div id="wifi_gomb" ontouchstart="wifi_check()">Wifi keresése</div>
+        	<div id="wifi_gomb" ontouchstart="server_update()">Újra</div>
         	
         </div>
         
@@ -67,10 +69,8 @@
         
         
         <script type="text/javascript" src="cordova.js"></script>
-        
         <script type="text/javascript">
             app.initialize();
         </script>
-        <script type="text/javascript" src="WifiWizard.js"></script>
     </body>
 </html>

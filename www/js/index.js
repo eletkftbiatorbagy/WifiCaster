@@ -1,13 +1,14 @@
-var SERVER 		= 	"dream4sys.xstream.hu";			// Wowza szerver elérése
-var STREAM_APP 	=	"dream4sys";					// Wowza application név
-var PHP_SERVER 	= 	"wificaster.xstream.hu";		// adat szerver elérhetősége
-var WifiZona 	=  	"XStream";				// wifi nevének előtagja   pl:   wificaster  ==  wificaster_konferencia    vagy  wificaster_focimeccs
-var wifi = WifiZona;								// a webes DEBUG-hoz kell csak
+var SERVER 		= 	"192.168.11.5";				// Wowza szerver elérése
+var STREAM_APP 	=	"live";						// Wowza application név
+var PHP_SERVER 	= 	"192.168.11.5";				// apache szerver elérhetősége
+var WifiZona 	=  	"WifiCaster";				// wifi neve
+var wifi = WifiZona;							// a webes DEBUG-hoz kell csak
 var PayPal = true;
 var UjAblak;
 var myScroll;
 var dev = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;		// app vagy browser ?
 var InitOk = false;
+var no_wifi_timer;
 
 var app = {
     // Application Constructor
@@ -32,50 +33,54 @@ function Init()
 	//console.log("userAgent = "+navigator.userAgent);
 	console.log("- Init -");
 	
-	var wifi_ssid = function(ssid)
-	{
-		console.log("wifi check done.");
-		wifi = ssid;
-		console.log("wifi connection = "+wifi);
-		document.getElementById("wifi").innerHTML="Wifi csatlakoztatva : "+wifi;
-		if (wifi.substr(0,WifiZona.length)===WifiZona)
-		{	document.getElementById("FoMenu").style.display="block";	document.getElementById("Wifi").style.display="none"; server_update();  }
-		else
-		{ 	document.getElementById("WifiZona").innerHTML=WifiZona; document.getElementById("Wifi").style.display="block";		document.getElementById("FoMenu").style.display="none";	 }
-	};
-	
 	if (dev) 
 	{ 
-		console.log("wifi check");
-		console.log("WifiWizard ? ="+WifiWizard); 
-		WifiWizard.getCurrentSSID(wifi_ssid,error);
 		window.plugins.insomnia.keepAwake(); 
 	} 
-	else { document.getElementById("wifi").innerHTML="Wifi : "+wifi; server_update(); }	
+	server_update();
 	
 	InitOk = true;
 }
 
 var error=function(msg) {};
 
-
-
+var startTimer = function()
+{
+	console.log("Starting server timer");
+	no_wifi_timer = setTimeout(function(){ no_wifi(); },3000);
+}
+var no_wifi = function()
+{
+		console.log("No Wifi");
+		document.getElementById("wifi2").innerHTML="Wifi : <span style='color:red;'>nem csatlakozik</span>";
+		document.getElementById("WifiZona").innerHTML=wifi; 
+		document.getElementById("Wifi").style.display="block";		
+		document.getElementById("FoMenu").style.display="none";
+};
+var clearTimer = function()
+{
+	clearTimeout(no_wifi_timer);
+	no_wifi_timer=0;
+}
 
 function server_update()
 {
 	document.getElementById("wifi").innerHTML="Szerver adatok lekérése";
-	ajax_hivas("http://"+PHP_SERVER+"/code/server.php?rnd="+Math.random(),"statusz_callback","data");
+	clearTimer();
+	startTimer();
+	ajax_hivas("http://"+PHP_SERVER+"/code/server.php?rnd="+Math.random(),"statusz_callback","data");	
 }
 
 function statusz_callback(resp)
 {
+	clearTimer();
+	document.getElementById("Wifi").style.display="none";		
+	document.getElementById("FoMenu").style.display="block";
 	var data = JSON.parse(resp);
-	//<img id="live" 		src="img/live.png" ontouchstart="go('Stream');">
-    //<nev style="top:63vh;">Élő videó</nev>
     document.getElementById("wifi").innerHTML="Wifi csatlakoztatva : "+wifi;
     for (var w=0; w < data.length; w++)
     {
-    	if (data[w].wifi === wifi)
+    	if (data[w].aktiv)
     	{
     		document.getElementById("Musor").innerHTML = data[w].musor;
     		var SL = document.getElementById("StreamLista");
@@ -116,24 +121,8 @@ function go(ablak,streamtipus,stream,musor,nev)
 			var oldLog = console.log;
 			console.log = function (message) {
 				oldLog.apply(console, arguments);
-				// var level = 0;
-// 				while (message.substr(0,1)==="•")
-// 				{
-// 					message = message.substr(1);
-// 					level++;
-// 				}
-// 				var ccolor = "";
-// 				var cpanel = CONSOLE_ID[level];
  				var t = new Date();
  				var timestamp = "<time>" + t.getFullYear() + "-" + ("0" + (t.getMonth() + 1)).slice(-2) + "-" + ("0" + (t.getDate() + 1)).slice(-2) + "&nbsp;&nbsp;&nbsp" + ("0"+t.getHours()).slice(-2) + ":" + ("0"+t.getMinutes()).slice(-2) + ":" + ("0"+t.getSeconds()).slice(-2) + "</time>";
-// 				switch (level)
-// 				{
-// 					case 1:		ccolor="lime"; 		break;
-// 					case 2:		ccolor="#ffff00"; 	break;
-// 					case 3:		ccolor="ffa0a0"; 	break;
-// 					default: 	ccolor="ffa0a0"; 	break;
-// 				}
-// 				if (level > 0) { document.getElementById(cpanel).childNodes[1].innerHTML = document.getElementById(cpanel).childNodes[1].innerHTML.substr(-5000) + timestamp + "<span>" + message + "</span><br>"; }
  				document.getElementById("logs").innerHTML += "<span style='color:white;'>"+timestamp + "</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>"+message + "</span><br>";
  			};
 	})();
