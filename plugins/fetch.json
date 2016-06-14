@@ -1,0 +1,11 @@
+{
+    "com.pylonproducts.wifiwizard": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/parsonsmatt/WifiWizard.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}
