@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>WifiCaster</title>
+        
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/ajax.js"></script>
+        <script type="text/javascript" src="js/iscroll-lite.js"></script>
+         
+        
+    </head>
+    <body>
+        <div id="FoMenu" style="display:block;">
+        	<img id="logo"  	src="img/menu_logo.png" onclick="document.getElementById('FoMenu').style.display='none';document.getElementById('LOG').style.display='block'; myScroll = new IScroll('#LOGS');">
+        	<div id="wifi"></div>
+        	<title id="Musor"></title>
+        	<div id="StreamLista">
+        	
+        	</div>
+        	
+        	<!-- <img id="paypal"    src="img/paypal.png" ontouchstart="PayPal=true;">  -->
+        </div>
+        
+        <div id="Wifi" style="display:none;">
+        	<img id="logo"  style="left:70%;"	src="img/menu_logo.png">
+        	<p style="top:35%;">
+        		Az Ön készüléke nem a <span style="color:yellow" id="WifiZona">WifiCaster</span> nevű hálózathoz kapcsolódik.<br>
+        		Ellenőrizze a wifi beállításait és próbálja meg újra!
+        	</p>
+        	<div id="wifi_gomb" ontouchstart="wifi_check()">Wifi keresése</div>
+        	
+        </div>
+        
+        
+        <div id="Stream" style="display:none;">
+        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('video_stream').pause(); document.getElementById('video_stream').innerHTML='';document.getElementById('Stream').style.display='none';document.getElementById('FoMenu').style.display='block';">
+        	<h1>Élő adás</h1>
+        	<film id="stream"></film>
+			<div id="stream_nev"></div>
+			<div id="stream_musor"></div>
+        </div>
+        		
+        <div id="StreamPP" style="display:none;">
+        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('StreamPP').style.display='none';document.getElementById('FoMenu').style.display='block';">
+        	<h1>Élő adás</h1>
+        	<p>
+        		A tartalom megtekintéséhez előfizetésre van szükség.<br>
+        		Előfizetni bankkártyával a PayPal szolgáltatáson keresztül tud.
+        	</p>
+        	<img class="paypal" src="img/paypal.png">
+        </div>
+        
+        <div id="LOG" style="display:none;">
+        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('LOG').style.display='none';document.getElementById('FoMenu').style.display='block';">
+        	<div id="LOGS">
+        		<div id="logs" class="wrapper">
+        		
+        		</div>
+        	</div>
+        </div>
+        
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="WifiWizard.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
+</html>

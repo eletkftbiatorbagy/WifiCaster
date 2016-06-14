@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="hu.e-let.wificaster" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="hu.elet.wificaster" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>WifiCaster</name>
     <description>
         Dream4Sys WifiCaster
@@ -34,12 +34,12 @@
             xxhdpi  : 144x144 px
             xxxhdpi : 192x192 px
         -->
-        <icon src="res/android/36.png" density="ldpi" />
-        <icon src="res/android/48.png" density="mdpi" />
-        <icon src="res/android/72.png" density="hdpi" />
-        <icon src="res/android/96.png" density="xhdpi" />
-        <icon src="res/android/144.png" density="xxhdpi" />
-        <icon src="res/android/192.png" density="xxxhdpi" />
+        <icon src="res/icon/android//36.png" density="ldpi" />
+        <icon src="res/icon/android//48.png" density="mdpi" />
+        <icon src="res/icon/android//72.png" density="hdpi" />
+        <icon src="res/icon/android//96.png" density="xhdpi" />
+        <icon src="res/icon/android//144.png" density="xxhdpi" />
+        <icon src="res/icon/android//192.png" density="xxxhdpi" />
     </platform>
     <platform name="android">
     <!-- you can use any density that exists in the Android project -->
@@ -63,8 +63,8 @@
         <icon src="res/icon/ios/Icon-76@2x.png" width="152" height="152" />
         <!-- iOS 6.1 -->
         <!-- Spotlight Icon -->
-        <icon src="res/icon/ios/Icon-40.png" width="40" height="40" />
-        <icon src="res/icon/ios/Icon-40@2x.png" width="80" height="80" />
+        <icon src="res/icon/ios/Icon-Small-40.png" width="40" height="40" />
+        <icon src="res/icon/ios/Icon-Small-40@2x.png" width="80" height="80" />
         <!-- iPhone / iPod Touch -->
         <icon src="res/icon/ios/Icon.png" width="57" height="57" />
         <icon src="res/icon/ios/Icon@2x.png" width="114" height="114" />

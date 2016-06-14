@@ -27,16 +27,16 @@
     },
     "installed_plugins": {
         "com.pylonproducts.wifiwizard": {
-            "PACKAGE_NAME": "hu.e-let.wificaster"
+            "PACKAGE_NAME": "hu.elet.wificaster"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "hu.e-let.wificaster"
+            "PACKAGE_NAME": "hu.elet.wificaster"
         },
         "nl.x-services.plugins.insomnia": {
-            "PACKAGE_NAME": "hu.e-let.wificaster"
+            "PACKAGE_NAME": "hu.elet.wificaster"
         },
         "org.apache.cordova.device": {
-            "PACKAGE_NAME": "hu.e-let.wificaster"
+            "PACKAGE_NAME": "hu.elet.wificaster"
         }
     },
     "dependent_plugins": {},

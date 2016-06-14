@@ -15,10 +15,10 @@
 		3047A5121AB8059700498E2A /* build-debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A50F1AB8059700498E2A /* build-debug.xcconfig */; };
 		3047A5131AB8059700498E2A /* build-release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5101AB8059700498E2A /* build-release.xcconfig */; };
 		3047A5141AB8059700498E2A /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5111AB8059700498E2A /* build.xcconfig */; };
-		6568BA95EA9F4554B5B0BEBB /* NXWWifiWizard.m in Sources */ = {isa = PBXBuildFile; fileRef = 450F58F559BC4D5089AC46AB /* NXWWifiWizard.m */; };
-		E61B0615443647B59001AEFE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B50B76942784B3D88D783D6 /* SystemConfiguration.framework */; };
-		B8F12E9B07884C06BEDA8BF9 /* Insomnia.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE6C1AF969442149B948459 /* Insomnia.m */; };
-		EFD9630599104D8B8D4C8ADA /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 015AB7987E50431CAF6D4ED3 /* CDVDevice.m */; };
+		0A9E3BD9823D4A1A8CD5E350 /* NXWWifiWizard.m in Sources */ = {isa = PBXBuildFile; fileRef = FCCD91F92A254C43AB864BD4 /* NXWWifiWizard.m */; };
+		35003419FEAD4B2683AE2C85 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76157D187C5B4E27A107C7A5 /* SystemConfiguration.framework */; };
+		30232F10997340678EDF8679 /* Insomnia.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5BB749B52848EFB944AF28 /* Insomnia.m */; };
+		AC2E8C11BC634AC49091471B /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 85697C1EC14F4AE0ADB6C49C /* CDVDevice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,13 +58,13 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "WifiCaster/config.xml"; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		450F58F559BC4D5089AC46AB /* NXWWifiWizard.m */ = {isa = PBXFileReference; name = "NXWWifiWizard.m"; path = "com.pylonproducts.wifiwizard/NXWWifiWizard.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		567480765F7649C9A0972D43 /* NXWWifiWizard.h */ = {isa = PBXFileReference; name = "NXWWifiWizard.h"; path = "com.pylonproducts.wifiwizard/NXWWifiWizard.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		6B50B76942784B3D88D783D6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
-		6CE6C1AF969442149B948459 /* Insomnia.m */ = {isa = PBXFileReference; name = "Insomnia.m"; path = "nl.x-services.plugins.insomnia/Insomnia.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		2EA8446832634AC69129F298 /* Insomnia.h */ = {isa = PBXFileReference; name = "Insomnia.h"; path = "nl.x-services.plugins.insomnia/Insomnia.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		015AB7987E50431CAF6D4ED3 /* CDVDevice.m */ = {isa = PBXFileReference; name = "CDVDevice.m"; path = "org.apache.cordova.device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		77CF066DD3CA45709CEC176B /* CDVDevice.h */ = {isa = PBXFileReference; name = "CDVDevice.h"; path = "org.apache.cordova.device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		FCCD91F92A254C43AB864BD4 /* NXWWifiWizard.m */ = {isa = PBXFileReference; name = "NXWWifiWizard.m"; path = "com.pylonproducts.wifiwizard/NXWWifiWizard.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		ADBAAE734D64406D92284012 /* NXWWifiWizard.h */ = {isa = PBXFileReference; name = "NXWWifiWizard.h"; path = "com.pylonproducts.wifiwizard/NXWWifiWizard.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		76157D187C5B4E27A107C7A5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		BD5BB749B52848EFB944AF28 /* Insomnia.m */ = {isa = PBXFileReference; name = "Insomnia.m"; path = "nl.x-services.plugins.insomnia/Insomnia.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		659ED37A5C974BD5AE791322 /* Insomnia.h */ = {isa = PBXFileReference; name = "Insomnia.h"; path = "nl.x-services.plugins.insomnia/Insomnia.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		85697C1EC14F4AE0ADB6C49C /* CDVDevice.m */ = {isa = PBXFileReference; name = "CDVDevice.m"; path = "org.apache.cordova.device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		D7B2AB2E5F514B40AB7A7760 /* CDVDevice.h */ = {isa = PBXFileReference; name = "CDVDevice.h"; path = "org.apache.cordova.device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
-				E61B0615443647B59001AEFE /* SystemConfiguration.framework in Frameworks */,
+				35003419FEAD4B2683AE2C85 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,7 +143,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6B50B76942784B3D88D783D6 /* SystemConfiguration.framework */,
+				76157D187C5B4E27A107C7A5 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -169,12 +169,12 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				450F58F559BC4D5089AC46AB /* NXWWifiWizard.m */,
-				567480765F7649C9A0972D43 /* NXWWifiWizard.h */,
-				6CE6C1AF969442149B948459 /* Insomnia.m */,
-				2EA8446832634AC69129F298 /* Insomnia.h */,
-				015AB7987E50431CAF6D4ED3 /* CDVDevice.m */,
-				77CF066DD3CA45709CEC176B /* CDVDevice.h */,
+				FCCD91F92A254C43AB864BD4 /* NXWWifiWizard.m */,
+				ADBAAE734D64406D92284012 /* NXWWifiWizard.h */,
+				BD5BB749B52848EFB944AF28 /* Insomnia.m */,
+				659ED37A5C974BD5AE791322 /* Insomnia.h */,
+				85697C1EC14F4AE0ADB6C49C /* CDVDevice.m */,
+				D7B2AB2E5F514B40AB7A7760 /* CDVDevice.h */,
 			);
 			name = Plugins;
 			path = "WifiCaster/Plugins";
@@ -289,9 +289,9 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				6568BA95EA9F4554B5B0BEBB /* NXWWifiWizard.m in Sources */,
-				B8F12E9B07884C06BEDA8BF9 /* Insomnia.m in Sources */,
-				EFD9630599104D8B8D4C8ADA /* CDVDevice.m in Sources */,
+				0A9E3BD9823D4A1A8CD5E350 /* NXWWifiWizard.m in Sources */,
+				30232F10997340678EDF8679 /* Insomnia.m in Sources */,
+				AC2E8C11BC634AC49091471B /* CDVDevice.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
