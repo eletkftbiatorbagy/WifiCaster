@@ -46,7 +46,8 @@ function Init()
 	
 	if (dev) 
 	{ 
-		console.log("wifi check"); 
+		console.log("wifi check");
+		console.log("WifiWizard ? ="+WifiWizard); 
 		WifiWizard.getCurrentSSID(wifi_ssid,error);
 		window.plugins.insomnia.keepAwake(); 
 	} 
