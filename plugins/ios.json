@@ -1,0 +1,24 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "com.pylonproducts.wifiwizard": {
+            "PACKAGE_NAME": "hu.e-let.wificaster"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "hu.e-let.wificaster"
+        },
+        "nl.x-services.plugins.insomnia": {
+            "PACKAGE_NAME": "hu.e-let.wificaster"
+        },
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "hu.e-let.wificaster"
+        }
+    },
+    "dependent_plugins": {}
+}
