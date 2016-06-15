@@ -120,7 +120,7 @@ function go(ablak,streamtipus,stream,musor,nev)
 							VID.setAttribute("controls","true");
 							VID.setAttribute("autoplay","true");
 							VID.onpause = function() {
-												VideoStop();
+												VideoStop(true);
 											};
 						var SOU = document.createElement("source");
 							SOU.src= streamtipus+'://'+SERVER+':1935/'+STREAM_APP+'/'+stream+(streamtipus=='http'?'/playlist.m3u8':'');	
@@ -135,11 +135,14 @@ function go(ablak,streamtipus,stream,musor,nev)
 		
 }
 
-function VideoStop()
+function VideoStop(paused)
 {
-	document.getElementById('video_stream').innerHTML='';
-	document.getElementById('Stream').style.display='none';
-	document.getElementById('FoMenu').style.display='block';
+	if (!paused) {document.getElementById('video_stream').pause();  }
+	setTimeout( function(){
+		document.getElementById('video_stream').parentNode.removeChild(document.getElementById('video_stream'));
+		document.getElementById('Stream').style.display='none';
+		document.getElementById('FoMenu').style.display='block';
+	},0);	
 }
 
 
