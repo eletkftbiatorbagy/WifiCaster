@@ -68,7 +68,9 @@ function server_update()
 	document.getElementById("wifi").innerHTML="Szerver adatok lekérése";
 	clearTimer();
 	startTimer();
-	ajax_hivas("http://"+PHP_SERVER+"/code/server.php?rnd="+Math.random(),"statusz_callback","data");	
+	ajax_hivas("http://"+PHP_SERVER+"/code/server.php?rnd="+Math.random(),"statusz_callback","data");
+	document.getElementById("Wifi").style.display="none";
+	document.getElementById("FoMenu").style.display="block";	
 }
 
 function statusz_callback(resp)
@@ -84,7 +86,10 @@ function statusz_callback(resp)
     	{
     		document.getElementById("Musor").innerHTML = data[w].musor;
     		var SL = document.getElementById("StreamLista");
-    		var lista = "<h2>"+data[w].musor+"</h2><ul>";
+    		var mL = 0;
+    		if (data[w].kamerak.length==1) { mL=26; }
+    		if (data[w].kamerak.length==2) { mL=13; }
+    		var lista = "<h2>"+data[w].musor+"</h2><ul style='margin-left:"+mL+"vw'>";
     		for (var k=0; k < data[w].kamerak.length; k++)
     		{
     			lista += '<li>';
