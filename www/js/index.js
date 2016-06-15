@@ -114,10 +114,21 @@ function go(ablak,streamtipus,stream,musor,nev)
 					if (!PayPal) { return; }
 					
 					if (UjAblak==="Stream") {
-						document.getElementById("stream").innerHTML = '<video id="video_stream" controls autoplay><source src="'+streamtipus+'://'+SERVER+':1935/'+STREAM_APP+'/'+stream+(streamtipus=='http'?'/playlist.m3u8':'')+'" autoplay="true"></video>';
-						setTimeout(function(){	
-												document.getElementById("video_stream").onpause = "VideoStop();";
-											},0);
+						var STR = document.getElementById("stream");
+						var VID = document.createElement("video");
+							VID.id = "video_stream";
+							VID.setAttribute("controls","true");
+							VID.onpause = function() {
+												VideoStop();
+											};
+						var SOU = document.createElement("source");
+							SOU.src= streamtipus+'://'+SERVER+':1935/'+STREAM_APP+'/'+stream+(streamtipus=='http'?'/playlist.m3u8':'');
+							SOU.setAttribute("autoplay","true");	
+						VID.appendChild(SOU);
+						STR.appendChild(VID);
+							
+						// '<video id="video_stream" controls autoplay><source src="'+streamtipus+'://'+SERVER+':1935/'+STREAM_APP+'/'+stream+(streamtipus=='http'?'/playlist.m3u8':'')+'" autoplay="true"></video>';
+						
 						document.getElementById("stream_nev").innerHTML = nev;
 						document.getElementById("stream_musor").innerHTML = musor;
 					}
