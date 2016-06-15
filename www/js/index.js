@@ -115,10 +115,20 @@ function go(ablak,streamtipus,stream,musor,nev)
 					
 					if (UjAblak==="Stream") {
 						document.getElementById("stream").innerHTML = '<video id="video_stream" controls autoplay><source src="'+streamtipus+'://'+SERVER+':1935/'+STREAM_APP+'/'+stream+(streamtipus=='http'?'/playlist.m3u8':'')+'" autoplay="true"></video>';
+						setTimeout(function(){	
+												document.getElementById("video_stream").onpause = "VideoStop();";
+											},0);
 						document.getElementById("stream_nev").innerHTML = nev;
 						document.getElementById("stream_musor").innerHTML = musor;
 					}
 		
+}
+
+function VideoStop()
+{
+	document.getElementById('video_stream').innerHTML='';
+	document.getElementById('Stream').style.display='none';
+	document.getElementById('FoMenu').style.display='block';
 }
 
 
