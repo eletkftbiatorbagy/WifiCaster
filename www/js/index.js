@@ -118,12 +118,12 @@ function go(ablak,streamtipus,stream,musor,nev)
 						var VID = document.createElement("video");
 							VID.id = "video_stream";
 							VID.setAttribute("controls","true");
+							VID.setAttribute("autoplay","true");
 							VID.onpause = function() {
 												VideoStop();
 											};
 						var SOU = document.createElement("source");
-							SOU.src= streamtipus+'://'+SERVER+':1935/'+STREAM_APP+'/'+stream+(streamtipus=='http'?'/playlist.m3u8':'');
-							SOU.setAttribute("autoplay","true");	
+							SOU.src= streamtipus+'://'+SERVER+':1935/'+STREAM_APP+'/'+stream+(streamtipus=='http'?'/playlist.m3u8':'');	
 						VID.appendChild(SOU);
 						STR.appendChild(VID);
 							
