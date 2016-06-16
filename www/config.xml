@@ -77,15 +77,17 @@
         <!-- iPad Spotlight and Settings Icon -->
         <icon src="res/icon/ios/Icon-Small-50.png" width="50" height="50" />
         <icon src="res/icon/ios/Icon-Small-50@2x.png" width="100" height="100" />
-    </platform>
     
-    <platform name="ios">
+    
+    
 		<!-- images are determined by width and height. The following are supported -->
-		<splash src="res/screen/ios/320x480.png" width="320" height="480"/>
-		<splash src="res/screen/ios/640x960.png" width="640" height="960"/>
+		<splash src="res/screen/ios/Default.png" width="320" height="480"/>
+		<splash src="res/screen/ios/Default@2x.png" width="640" height="960"/>
 		
-		<splash src="res/screen/ios/1024x768.png" width="1024" height="768"/>
-		<splash src="res/screen/ios/2048x1536.png" width="2048" height="1536"/>
+		<splash src="Default-568h@2x.png" platform="ios" width="640" height="1136" />
+		
+		<splash src="res/screen/ios/Default-Landscape.png" width="1024" height="768"/>
+		<splash src="res/screen/ios/Default-Landscape@2x.png" width="2048" height="1536"/>
 		
 		<splash src="res/screen/ios/2208x1242.png" width="2208" height="1242"/>
 	</platform>
