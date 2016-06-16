@@ -51,7 +51,7 @@
     
     
     <platform name="ios">
-        <icon src="res/icon/ios/Icon-83.5@2x.png" width="167" height="167" />
+        <icon src="res/icon/ios/Icon-83@2x.png" width="167" height="167" />
         <!-- iPhone 6 Plus  -->
         <icon src="res/icon/ios/Icon-60@3x.png" width="180" height="180" />
         <!-- iOS 7.0+ -->
