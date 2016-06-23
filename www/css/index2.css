@@ -84,7 +84,7 @@ body {
 	position:absolute;
 	left:0%;
 	top:0%;
-	height:8em;
+	height:6em;
 	z-index:2;
 }
 #wifi,#wifi2 {
@@ -175,6 +175,8 @@ ul {
 	margin-bottom:0.1em;
 	border: 0.4em solid #f7d346;
 	border-radius : 1em;
+	text-align:center;
+	max-height: 6em;
 }
 #StreamLista h2 {
 	text-align:center;
