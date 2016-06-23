@@ -1,0 +1,335 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+@font-face {
+    font-family: Aero;
+    src: url(Aeroportal.ttf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Aero;
+    src: url(Aeroportal_Medium.ttf);
+    font-weight: "bold";
+}
+
+body {  font-size:12px; }
+
+@media all and (min-height: 350px) {
+    body {
+        font-size:13px;
+    }
+}
+@media all and (min-height: 450px) {
+    body {
+        font-size:14px;
+    }
+}
+@media all and (min-height: 550px) {
+    body {
+        font-size:16px;
+    }
+}
+@media all and (min-height: 650px) {
+    body {
+        font-size:18px;
+    }
+}
+@media all and (min-height: 750px) {
+    body {
+        font-size:23px;
+    }
+}
+
+
+html {	height:100%; }
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    
+    font-family: Aero;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:smallcaps;
+    width:100%;
+    background: linear-gradient(to bottom, #a9f7ff 0%,#2989d8 50%,#207cca 74%,#7db9e8 100%);
+    background-size: auto 100%;
+    display:inline-block;
+}
+
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    
+}
+
+#LOGS {
+	position:absolute;
+	left:2%;
+	top:12%;
+	width:96%;
+	bottom:0;
+	z-index:2;
+	overflow: hidden;
+}
+#logs {
+	width:100%;
+	font: 15px Verdana;
+	display:block;
+}
+
+#logo {
+	position:absolute;
+	left:0%;
+	top:0%;
+	height:8em;
+	z-index:2;
+}
+#wifi,#wifi2 {
+	position: absolute;
+    right: 2%;
+    top: 3%;
+    width: 65%;
+    text-align: right;
+    z-index: 2;
+    font-size: 1.1em;
+    font-family: Verdana;
+    color: #555555;
+}
+#paypal {
+	position:absolute;
+	right:4%;
+	bottom:4%;
+	width:30%;
+}
+
+
+
+#wifi_gomb {
+	position:absolute;
+	left:40%;
+	width:20%;
+	bottom:12%;
+	font-size: 2em;
+	font-family: Verdana;
+	text-align:center;
+	background: #dadaff;
+	padding:2%;
+	border-radius : 1em;
+	border: 0.2em solid #5353a5;
+}
+
+.back {
+	position:absolute;
+	top:2%;
+	left:1%;
+	height:3em;
+}
+h1{
+	position:absolute;
+	right:1%;
+	top:2.2%;
+	font-size: 3em;
+	color:#BB3A25;
+	text-shadow: 3px 3px #F6E500;
+	text-align:right;
+	background: #ffffff;
+	opacity: 0.85;
+	--border-radius: 3%;
+	padding:2%;
+	padding-bottom:1%;
+}
+
+p {
+	position:absolute;
+	left:7%;
+	right:7%;
+	top: 25%;
+	bottom:50%%;
+	font: 1.7em/1.4em Verdana;
+	color:#FB6A65;
+	text-shadow: 2px 2px #063500;
+}
+
+#StreamLista {
+	position:absolute;
+	bottom: 3%;
+	left:7%;
+	right:7%;
+	display:block;
+}
+ul {
+	display:block;
+	padding-bottom: 10%;
+	width:100%;
+}
+#StreamLista li {
+	float:left;
+	width:33%;
+}
+#StreamLista li img {
+	width: 80%;
+	margin:0.5em 10%;
+	margin-bottom:0.1em;
+	border: 0.4em solid #f7d346;
+	border-radius : 1em;
+}
+#StreamLista h2 {
+	text-align:center;
+	font-size: 2em;
+	margin-bottom:0.2em;
+	width:100%;
+	height:1em;
+	color: #f7d346;
+	border-bottom: 0.1em solid #f7d346;
+}
+#StreamLista li h3 {
+	text-align:center;
+	font-size: 1.3em;
+	margin-bottom:1%;
+}
+
+film {
+	position: absolute;
+	bottom:12%;
+	left:1%;
+	width:98%;
+}
+video {
+	width: 100%;
+	height:100%;
+}
+
+#stream_nev {
+	position:absolute;
+	left:10%;
+	right:10%;
+	bottom: 6%;
+	font-size: 1.7em;
+	color:#ffCA25;
+	--text-shadow: 2px 2px #F00000;
+	text-align:center;
+}
+#stream_musor {
+	position:absolute;
+	left:10%;
+	right:10%;
+	bottom: 1%;
+	font-size: 1.5em;
+	color:##f7d346;
+	--text-shadow: 2px 2px #F00000;
+	text-align:center;
+}
+
+
+.paypal {
+	position:absolute;
+	left:25%;
+	bottom:4%;
+	width:50%;
+}
+
+hatter {
+	background: #fafafa;
+	opacity: 0.3;
+	position:absolute;
+	left:0;
+	right:0;
+	top:21%;
+	bottom:0;
+}
+
+scroll{
+	position:absolute;
+	left:0;
+	right:0;
+	top:21%;
+	height:79%;
+	overflow:hidden;
+	padding-left:20%;
+	padding-right:20%;
+	border-top: 1.5% solid #DEE2F0;
+}
+
+
+#Replay li{
+	position:relative;
+	width:60%;
+	height:15%;
+	border: 0.3% solid #333333;
+	border-radius: 2%;
+	background: #b0ffb0;
+	opacity: 0.95;
+	margin-top: 2%;
+}
+#Replay li img{
+	position:absolute;
+	left:2%;
+	top:2%;
+	height:96%;
+	
+}
+#Replay li mecss {
+	position:absolute;
+	left:22%;
+	top:10%;
+	width:70%;
+	font: 2% Verdana;
+	color: #003000;
+}
+#Replay li cim{
+	position:absolute;
+	left:22%;
+	top:33%;
+	width:40%;
+	font: 4% Verdana;
+	color: #104010;
+}
+#Replay li info{
+	position:absolute;
+	right:5%;
+	bottom:2%;
+	width:30%;
+	font: 3% Verdana;
+	color: #406040;
+	text-align: right;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.7; }
+    to { opacity: 1.0; }
+}
+@keyframes fade2 {
+    from { opacity: 0.7; }
+    50% { opacity: 1.0; }
+    to { opacity: 0.7; }
+} 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.7; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 4000ms infinite;
+    -webkit-animation:fade 4000ms infinite;
+    animation-timing-function: ease-in-out;
+}
+.blink2{
+	animation:fade2 4000ms infinite;
+    -webkit-animation:fade2 4000ms infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.goool{
+	animation:goool 1000ms;
+	animation-timing-function: ease-in;
+	animation-iteration-count:1;
+}
+@keyframes goool {
+	from { left:31%; bottom:36%; width:10%; }
+	to { left:-10%; bottom: -30%; width:120%; }
+}

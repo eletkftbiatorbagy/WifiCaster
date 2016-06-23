@@ -87,9 +87,9 @@ function statusz_callback(resp)
     		document.getElementById("Musor").innerHTML = data[w].musor;
     		var SL = document.getElementById("StreamLista");
     		var mL = 0;
-    		if (data[w].kamerak.length==1) { mL=26; }
-    		if (data[w].kamerak.length==2) { mL=13; }
-    		var lista = "<h2>"+data[w].musor+"</h2><ul style='margin-left:"+mL+"vw'>";
+    		if (data[w].kamerak.length==1) { mL=33; }
+    		if (data[w].kamerak.length==2) { mL=16.5; }
+    		var lista = "<h2>"+data[w].musor+"</h2><ul style='margin-left:"+mL+"%'>";
     		for (var k=0; k < data[w].kamerak.length; k++)
     		{
     			lista += '<li>';
