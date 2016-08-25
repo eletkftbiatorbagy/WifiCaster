@@ -9,8 +9,11 @@
         <link rel="stylesheet" type="text/css" href="css/index2.css" />
         <title>WifiCaster</title>
         
+        <script type="text/javascript" src="js/settings.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
         <script type="text/javascript" src="js/ajax.js"></script>
+        <script type="text/javascript" src="js/md5.js"></script>
         <script type="text/javascript" src="js/iscroll-lite.js"></script>
          
         <script type="text/javascript" src="phonegap.js"></script>
@@ -19,14 +22,129 @@
         <div id="FoMenu" style="display:block;">
         	<img id="logo"  	src="img/menu_logo.png">
         	<div id="wifi"></div>
+        	<div id="user" ontouchend="PopUp('LOGIN');"><img src="img/user.png"/></div>
+        	<div id="kosar" ontouchend="PopUp('KOSAR');"><img src="img/kosar.png"/></div>
+        	<div id="info" ontouchend="PopUp('INFO');"><img src="img/info.png"/></div>
         	<title id="Musor"></title>
         	<div id="StreamLista">
         	
         	</div>
         	
-        	<!-- <img id="paypal"    src="img/paypal.png" ontouchstart="PayPal=true;">  -->
-        	<!-- <div style="position:absolute;right:0;bottom:0;width:5%;height:5%;"  onclick="document.getElementById('FoMenu').style.display='none';document.getElementById('LOG').style.display='block'; myScroll = new IScroll('#LOGS');"></div>  -->
         </div>
+        
+        <popup id="LOGIN" style="display:none;">
+        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
+        	<div id="login">
+				<h4>Belépés</h4>
+				<input class="chkbox" type="checkbox"><label>Maradjak belépve</label><br>
+				<span>Azonosító:</span>
+				<input class="mezo" type="text" maxlength="20"/><br>
+				<span>Jelszó:</span>
+				<input class="mezo" type="password" maxlength="20"/><br>
+				<div class="gomb">Bejelentkezés</div>
+				
+				<div class="gomb paros" ontouchend="PopUp('PASSWD');;">Jelszó csere</div>
+				<div class="gomb paros" ontouchend ="PopUp('REGISZT');">Regisztráció</div>
+			</div>	
+        </popup>
+        
+        <popup id="KOSAR" style="display:none;">
+        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
+        	<div id="login">
+				<div class="gomb nagy" ontouchend="PopUp('PREM');">Új előfizetés</div>
+				<div class="gomb nagy" style="background:#30af30;">Vásárlások visszaállítása</div>
+				<div class="gomb nagy" style="background:#f16060;color:white;margin-top:8%;">Kijelentkezés</div>
+			</div>	
+        </popup>
+        
+        <popup id="LOGGEDIN" style="display:none;">
+        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
+        	<div id="login">
+        		<info>
+        			BEJELENTKEZVE : <div id="loggedin">kissato</div>
+        		</info><br>
+        		<div class="gomb nagy">Vásárlások visszaállítása</div>
+				<div class="gomb nagy" style="background:#f16060;color:white;margin-top:8%;">Kijelentkezés</div>
+			</div>	
+        </popup>
+        
+        <popup id="PASSWD" style="display:none;">
+        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
+        	<div id="login">
+				<h4>Jelszó cseréje</h4>
+				<span>Azonosító:</span>
+				<input class="mezo" type="text" maxlength="20"/><br>
+				<span>Új jelszó:</span>
+				<input class="mezo" type="text" maxlength="20"/><br>
+				<div class="gomb" ontouchend="PopUp('CODE');">Jelszó csere</div>
+			</div>	
+        </popup>
+        
+        <popup id="CODE" style="display:none;">
+        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
+        	<div id="login">
+				<h4>Jelszócsere aktiválása</h4><br><br>
+				<info>
+					A regisztrációkor megadott <tel id="TEL">209465582</tel> telefonszámra elküldünk egy visszaigazoló kódot SMS-ben.<br>
+					A jelszó cseréjéhez, kérjük írja be a mezőbe.<br>
+					( az SMS megérkezéséig türelmét kérjük )
+				</info>
+				<span style="width:55%;">SMS-ben kapott kód:</span>
+				<input class="mezo" type="text" maxlength="6" style="width:25%;font-size:1.2em;"/><br>
+				<div class="gomb" style="margin-left:20%;">OK</div>
+			</div>	
+        </popup>
+        
+        <popup id="REGISZT" style="display:none;">
+        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
+        	<div id="login">
+				<h4>Regisztráció</h4>
+				<span>Azonosító:</span>
+				<input class="mezo" type="text" maxlength="20" id="REG_nev"/><br>
+				<span>Jelszó:</span>
+				<input class="mezo" type="text" maxlength="20" id="REG_jelszo"/><br>
+				<span>Telefon:</span>
+				<input class="mezo" type="text" maxlength="10" id="REG_tel"/><br>
+				<div class="gomb" ontouchend="Regisztracio();" style="background:#bef742;">Regisztráció</div>
+				<info>
+					A megadott telefonszámra elküldünk egy megerősítő kódot.
+				</info>
+			</div>	
+        </popup>
+        
+        <popup id="INFO" style="display:none;">
+        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
+        	<div id="login">
+				<h4>Általános információk</h4><br><br>
+				<div class="gomb nagy">Az alkalmazás használata</div>
+				<div class="gomb nagy">Adatvédelmi szabályzat</div>
+				<div class="gomb nagy">Általános szerződési feltételek</div>
+				<div class="gomb nagy">Elérhetőségünk</div>
+			</div>	
+        </popup>
+        
+        <popup id="PREM" style="display:none;">
+        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
+        	<div id="login" style="width:70%;left:14%;top:5%;">
+				<h4>Előfizetés prémium tartalmakra</h4><br><br>
+				<info>
+					A vásárlás az alkalmazás áruházon keresztül történik.<br>
+					A sikeres vásárlásról SMS visszaigazolást kap.
+				</info>
+				<div class="gomb nagy">Napijegy<ar>1 000 Ft</ar></div>
+				<div class="gomb nagy">Hetijegy<off>-10%</off><ar>6 300 Ft</ar></div>
+				<div class="gomb nagy">Havi előfizetés<off>-25%</off><ar>22 500 Ft</ar></div>
+				<div class="gomb nagy" style="margin-top:5%;background:#30af30;">Korábbi vásárlások visszaállítása</div>
+			</div>	
+        </popup>
+        
+        <popup id="PINFO" style="display:block;">
+        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
+        	<div id="login">
+				<h4>Az Ön által megnyitni kívánt tartalom prémium előfizetést igényel.</h4><br><br>
+				<div class="gomb nagy" ontouchend="PopUp('PREM');">Előfizetés</div>
+			</div>	
+        </popup>
         
         <div id="Wifi" style="display:none;">
         	<img id="logo"  src="img/menu_logo.png">
@@ -35,13 +153,13 @@
         		Az Ön készüléke nem a <span style="color:yellow" id="WifiZona">WifiCaster</span> nevű hálózathoz kapcsolódik.<br>
         		Ellenőrizze a wifi beállításait és próbálja meg újra!
         	</p>
-        	<div id="wifi_gomb" ontouchstart="server_update()">Újra</div>
+        	<div id="wifi_gomb" ontouchend="server_update()">Újra</div>
         	<div style="position:absolute;right:0;bottom:0;width:5%;height:5%;"  onclick="document.getElementById('FoMenu').style.display='none';document.getElementById('LOG').style.display='block'; myScroll = new IScroll('#LOGS');"></div>
         </div>
         
         
         <div id="Stream" style="display:none;">
-        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('video_stream').pause();">
+        	<img class="back" src="img/back.png" ontouchend="document.getElementById('video_stream').pause();">
         	<h1>Élő adás</h1>
         	<film id="stream"></film>
 			<div id="stream_nev"></div>
@@ -49,7 +167,7 @@
         </div>
         		
         <div id="StreamPP" style="display:none;">
-        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('StreamPP').style.display='none';document.getElementById('FoMenu').style.display='block';">
+        	<img class="back" src="img/back.png" ontouchend="document.getElementById('StreamPP').style.display='none';document.getElementById('FoMenu').style.display='block';">
         	<h1>Élő adás</h1>
         	<p>
         		A tartalom megtekintéséhez előfizetésre van szükség.<br>
@@ -59,7 +177,7 @@
         </div>
         
         <div id="LOG" style="display:none;">
-        	<img class="back" src="img/back.png" ontouchstart="document.getElementById('LOG').style.display='none';document.getElementById('FoMenu').style.display='block';">
+        	<img class="back" src="img/back.png" ontouchend="document.getElementById('LOG').style.display='none';document.getElementById('FoMenu').style.display='block';">
         	<div id="LOGS">
         		<div id="logs" class="wrapper">
         		

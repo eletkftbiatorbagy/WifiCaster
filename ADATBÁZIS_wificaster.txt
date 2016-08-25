@@ -1,0 +1,33 @@
+CREATE DATABASE wificaster
+   OWNER = wificaster
+   ENCODING = 'UTF-8';
+
+\c wificaster
+
+SET datestyle TO 'ISO, YMD';
+
+CREATE SCHEMA wificaster
+AUTHORIZATION wificaster;
+
+
+
+
+/*	------------ felhasználók
+*/
+CREATE TABLE wificaster.felhasznalok
+(
+	id serial,
+	host varchar(20) DEFAULT 'wificaster',
+	nev varchar(20),
+	tel varchar(10),
+	jelszo varchar(32),
+	reg_code varchar(6),
+	pass_code varchar(6),
+	reg_datum timestamp,
+	login_datum timestamp,
+	sms_datum timestamp,
+	login_proba integer DEFAULT 0,
+	CONSTRAINT felhasznalok_pk PRIMARY KEY(nev)
+);
+ALTER TABLE wificaster.felhasznalok OWNER TO wificaster;
+

@@ -1,9 +1,4 @@
-var SERVER 		= 	"192.168.11.5";				// Wowza szerver elérése
-var STREAM_APP 	=	"live";						// Wowza application név
-var PHP_SERVER 	= 	"192.168.11.5";				// apache szerver elérhetősége
-var WifiZona 	=  	"WifiCaster";				// wifi neve
-var wifi = WifiZona;							// a webes DEBUG-hoz kell csak
-var PayPal = true;
+
 var UjAblak;
 var myScroll;
 var dev = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;		// app vagy browser ?
@@ -53,7 +48,7 @@ var no_wifi = function()
 {
 		console.log("No Wifi");
 		document.getElementById("wifi2").innerHTML="Wifi : <span style='color:red;'>nem csatlakozik</span>";
-		document.getElementById("WifiZona").innerHTML=wifi; 
+		document.getElementById("WifiZona").innerHTML=WifiZona; 
 		document.getElementById("Wifi").style.display="block";		
 		document.getElementById("FoMenu").style.display="none";
 };
@@ -79,7 +74,7 @@ function statusz_callback(resp)
 	document.getElementById("Wifi").style.display="none";		
 	document.getElementById("FoMenu").style.display="block";
 	var data = JSON.parse(resp);
-    document.getElementById("wifi").innerHTML="Wifi csatlakoztatva : "+wifi;
+    document.getElementById("wifi").innerHTML="Wifi csatlakoztatva : "+WifiZona;
     for (var w=0; w < data.length; w++)
     {
     	if (data[w].aktiv)
@@ -110,8 +105,8 @@ function go(ablak,streamtipus,stream,musor,nev)
 	
 	
 					document.getElementById('FoMenu').style.display='none';
-					if (UjAblak) { document.getElementById(UjAblak+(PayPal?'':'PP')).style.display='block'; }
-					if (!PayPal) { return; }
+					if (UjAblak) { document.getElementById(UjAblak).style.display='block'; }
+
 					
 					if (UjAblak==="Stream") {
 						var STR = document.getElementById("stream");
@@ -123,11 +118,11 @@ function go(ablak,streamtipus,stream,musor,nev)
 												VideoStop(true);
 											};
 						var SOU = document.createElement("source");
-							SOU.src= streamtipus+'://'+SERVER+':1935/'+STREAM_APP+'/'+stream+(streamtipus=='http'?'/playlist.m3u8':'');	
+							SOU.src= streamtipus+'://'+WOWZA+':1935/'+STREAM_APP+'/'+stream+(streamtipus=='http'?'/playlist.m3u8':'');	
 						VID.appendChild(SOU);
 						STR.appendChild(VID);
 							
-						// '<video id="video_stream" controls autoplay><source src="'+streamtipus+'://'+SERVER+':1935/'+STREAM_APP+'/'+stream+(streamtipus=='http'?'/playlist.m3u8':'')+'" autoplay="true"></video>';
+						// '<video id="video_stream" controls autoplay><source src="'+streamtipus+'://'+WOWZA+':1935/'+STREAM_APP+'/'+stream+(streamtipus=='http'?'/playlist.m3u8':'')+'" autoplay="true"></video>';
 						
 						document.getElementById("stream_nev").innerHTML = nev;
 						document.getElementById("stream_musor").innerHTML = musor;
