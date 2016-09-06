@@ -1,6 +1,6 @@
 function ajax_hivas(url,callback,ID)
 {
-				url = url + "&callback="+callback;
+				url = url + "&callback="+callback +"&id="+ID;
 				// create a new script element
 				var script = document.createElement('script');
 				// set the src attribute to that url

@@ -7,11 +7,12 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/reset.css" />
         <link rel="stylesheet" type="text/css" href="css/index2.css" />
+        <link rel="stylesheet" type="text/css" href="css/login.css" />
         <title>WifiCaster</title>
         
         <script type="text/javascript" src="js/settings.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/ajax.js"></script>
         <script type="text/javascript" src="js/md5.js"></script>
         <script type="text/javascript" src="js/iscroll-lite.js"></script>
@@ -22,71 +23,99 @@
         <div id="FoMenu" style="display:block;">
         	<img id="logo"  	src="img/menu_logo.png">
         	<div id="wifi"></div>
-        	<div id="user" ontouchend="PopUp('LOGIN');"><img src="img/user.png"/></div>
+        	<div id="user" ontouchend="Logine();"><img src="img/user.png"/><div id="USER_ID"></div></div>
         	<div id="kosar" ontouchend="PopUp('KOSAR');"><img src="img/kosar.png"/></div>
         	<div id="info" ontouchend="PopUp('INFO');"><img src="img/info.png"/></div>
         	<title id="Musor"></title>
         	<div id="StreamLista">
-        	
+        		
         	</div>
         	
         </div>
         
-        <popup id="LOGIN" style="display:none;">
-        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
-        	<div id="login">
+        <popup id="MESSAGE">
+        	<hatter ontouchend="this.parentNode.style.display='none';PopUp(LastPopup,LastModal);"></hatter>
+        	<div class="login" style="width:68%;left:14%;" ontouchend="this.parentNode.style.display='none';PopUp(LastPopup,LastModal);">
+        		<ikon></ikon>
+        		<info id="uzenet"></info><br>
+        	</div>
+        </popup>
+        
+        <popup id="LOGIN">
+        	<hatter></hatter>
+        	<div class="login">
 				<h4>Belépés</h4>
-				<input class="chkbox" type="checkbox"><label>Maradjak belépve</label><br>
+				<input class="chkbox" type="checkbox" id="Login_save"><label>Maradjak belépve</label><br>
 				<span>Azonosító:</span>
-				<input class="mezo" type="text" maxlength="20"/><br>
+				<input class="mezo" type="text" maxlength="20" id="Login_nev"/><br>
 				<span>Jelszó:</span>
-				<input class="mezo" type="password" maxlength="20"/><br>
-				<div class="gomb">Bejelentkezés</div>
+				<input class="mezo" type="password" maxlength="20" id="Login_jelszo"/><br>
+				<div class="gomb" ontouchend="Login();">Bejelentkezés</div>
 				
-				<div class="gomb paros" ontouchend="PopUp('PASSWD');;">Jelszó csere</div>
+				<div class="gomb paros" ontouchend="PopUp('PASSWD');">Jelszó csere</div>
 				<div class="gomb paros" ontouchend ="PopUp('REGISZT');">Regisztráció</div>
 			</div>	
         </popup>
         
-        <popup id="KOSAR" style="display:none;">
-        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
-        	<div id="login">
+        <popup id="KOSAR">
+        	<hatter></hatter>
+        	<div class="login">
 				<div class="gomb nagy" ontouchend="PopUp('PREM');">Új előfizetés</div>
-				<div class="gomb nagy" style="background:#30af30;">Vásárlások visszaállítása</div>
-				<div class="gomb nagy" style="background:#f16060;color:white;margin-top:8%;">Kijelentkezés</div>
+				<div class="gomb nagy" style="background:#30af30;margin-top:7%;">Vásárlások visszaállítása</div>
+				<div class="gomb nagy" style="background:#54b2da;margin-top:7%;">Korábbi vásárlások</div>
 			</div>	
         </popup>
         
-        <popup id="LOGGEDIN" style="display:none;">
-        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
-        	<div id="login">
+        <popup id="LOGGEDIN">
+        	<hatter></hatter>
+        	<div class="login">
         		<info>
-        			BEJELENTKEZVE : <div id="loggedin">kissato</div>
+        			BEJELENTKEZVE : <div id="loggedin"></div>
         		</info><br>
         		<div class="gomb nagy">Vásárlások visszaállítása</div>
-				<div class="gomb nagy" style="background:#f16060;color:white;margin-top:8%;">Kijelentkezés</div>
+				<div class="gomb nagy" style="background:#f16060;color:white;margin-top:8%;" ontouchend="Logout();">Kijelentkezés</div>
 			</div>	
         </popup>
         
-        <popup id="PASSWD" style="display:none;">
-        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
-        	<div id="login">
+        <popup id="PASSWD">
+        	<hatter></hatter>
+        	<div class="login">
 				<h4>Jelszó cseréje</h4>
 				<span>Azonosító:</span>
 				<input class="mezo" type="text" maxlength="20"/><br>
 				<span>Új jelszó:</span>
 				<input class="mezo" type="text" maxlength="20"/><br>
-				<div class="gomb" ontouchend="PopUp('CODE');">Jelszó csere</div>
+				<div class="gomb" ontouchend="PopUp('CODE2');">Jelszó csere</div>
 			</div>	
         </popup>
         
-        <popup id="CODE" style="display:none;">
-        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
-        	<div id="login">
+        <popup id="CODE">
+        	<hatter></hatter>
+        	<div class="login" style="top:3%;width:75%;left:12%;">
+        		<exit></exit>
+				<h4>Regisztráció aktiválása</h4><br><br>
+				<info style="margin-bottom:1%;">
+					A regisztrációkor megadott <tel id="TEL">209465582</tel> telefonszámra elküldünk egy visszaigazoló kódot SMS-ben. 
+					Az aktiváláshoz, kérjük írja be a kódot a mezőbe. 
+				</info>
+				<span style="width:37%;">SMS-ben kapott kód:</span>
+				<input class="mezo" type="text" maxlength="6" style="width:20%;font-size:1.3em;float:left;text-align: center;font-weight: bold;letter-spacing: 0.07em;" id="REG_CODE"/>
+				<div class="gomb" style="width:20%; margin-top:2%; margin-left:5%;display:inline-block;" ontouchend="Code_Check();">OK</div><br>
+				<info id="CODE_TIME" style="margin-bottom:2%;text-align:center;">Az SMS érkezése <ido id="code_time" style="font-weight:bold;color:#fadd81;" >60</ido> másodpercen belül várható.</info>
+				<div id="noSMS">
+					<div class="gomb" style="margin-left:20%;margin-top:4%;background:#fadd81;" ontouchend="PopUp('REGISZT');">Hibás telefonszám</div>
+					<div class="gomb" style="margin-left:20%;background:#f5a9b3;">Nem kaptam SMS-t</div>
+				</div>	
+			</div>	
+        </popup>
+        
+        <popup id="CODE2">
+        	<hatter></hatter>
+        	<div class="login">
 				<h4>Jelszócsere aktiválása</h4><br><br>
 				<info>
 					A regisztrációkor megadott <tel id="TEL">209465582</tel> telefonszámra elküldünk egy visszaigazoló kódot SMS-ben.<br>
-					A jelszó cseréjéhez, kérjük írja be a mezőbe.<br>
+					A jelszó cseréjéhez, kérjük írja be ezt a kódot a mezőbe.<br>
 					( az SMS megérkezéséig türelmét kérjük )
 				</info>
 				<span style="width:55%;">SMS-ben kapott kód:</span>
@@ -95,9 +124,9 @@
 			</div>	
         </popup>
         
-        <popup id="REGISZT" style="display:none;">
-        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
-        	<div id="login">
+        <popup id="REGISZT">
+        	<hatter></hatter>
+        	<div class="login">
 				<h4>Regisztráció</h4>
 				<span>Azonosító:</span>
 				<input class="mezo" type="text" maxlength="20" id="REG_nev"/><br>
@@ -112,9 +141,9 @@
 			</div>	
         </popup>
         
-        <popup id="INFO" style="display:none;">
-        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
-        	<div id="login">
+        <popup id="INFO">
+        	<hatter></hatter>
+        	<div class="login">
 				<h4>Általános információk</h4><br><br>
 				<div class="gomb nagy">Az alkalmazás használata</div>
 				<div class="gomb nagy">Adatvédelmi szabályzat</div>
@@ -123,9 +152,9 @@
 			</div>	
         </popup>
         
-        <popup id="PREM" style="display:none;">
-        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
-        	<div id="login" style="width:70%;left:14%;top:5%;">
+        <popup id="PREM">
+        	<hatter></hatter>
+        	<div class="login" style="width:70%;left:14%;top:5%;">
 				<h4>Előfizetés prémium tartalmakra</h4><br><br>
 				<info>
 					A vásárlás az alkalmazás áruházon keresztül történik.<br>
@@ -138,13 +167,17 @@
 			</div>	
         </popup>
         
-        <popup id="PINFO" style="display:block;">
-        	<div id="popup_hatter" ontouchend="this.parentNode.style.display='none';"></div>
-        	<div id="login">
+        <popup id="PINFO">
+        	<hatter></hatter>
+        	<div class="login">
 				<h4>Az Ön által megnyitni kívánt tartalom prémium előfizetést igényel.</h4><br><br>
 				<div class="gomb nagy" ontouchend="PopUp('PREM');">Előfizetés</div>
 			</div>	
         </popup>
+        
+        
+        <!--  popup vége    -->
+        
         
         <div id="Wifi" style="display:none;">
         	<img id="logo"  src="img/menu_logo.png">

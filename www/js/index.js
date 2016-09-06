@@ -34,7 +34,10 @@ function Init()
 	} 
 	server_update();
 	
+	LoginInit();
+	
 	InitOk = true;
+	
 }
 
 var error=function(msg) {};
