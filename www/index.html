@@ -12,10 +12,13 @@
         
         <script type="text/javascript" src="js/settings.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
+        <!-- <script type="text/javascript" src="js/vasarlas.js"></script> -->
+        <script type="text/javascript" src="js/cordova-non-renewing-subscription.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/ajax.js"></script>
         <script type="text/javascript" src="js/md5.js"></script>
         <script type="text/javascript" src="js/iscroll-lite.js"></script>
+        
          
         <script type="text/javascript" src="phonegap.js"></script>
     </head>
@@ -60,8 +63,8 @@
         <popup id="KOSAR">
         	<hatter></hatter>
         	<div class="login">
-				<div class="gomb nagy" ontouchend="PopUp('PREM');">Új előfizetés</div>
-				<div class="gomb nagy" style="background:#30af30;margin-top:7%;">Vásárlások visszaállítása</div>
+        		<h4>Vásárlás</h4>
+				<div class="gomb nagy" id="manage-subscription">Új előfizetés</div>
 				<div class="gomb nagy" style="background:#54b2da;margin-top:7%;">Korábbi vásárlások</div>
 			</div>	
         </popup>
@@ -72,7 +75,6 @@
         		<info>
         			BEJELENTKEZVE : <div id="loggedin"></div>
         		</info><br>
-        		<div class="gomb nagy">Vásárlások visszaállítása</div>
 				<div class="gomb nagy" style="background:#f16060;color:white;margin-top:8%;" ontouchend="Logout();">Kijelentkezés</div>
 			</div>	
         </popup>
@@ -160,10 +162,10 @@
 					A vásárlás az alkalmazás áruházon keresztül történik.<br>
 					A sikeres vásárlásról SMS visszaigazolást kap.
 				</info>
-				<div class="gomb nagy">Napijegy<ar>1 000 Ft</ar></div>
-				<div class="gomb nagy">Hetijegy<off>-10%</off><ar>6 300 Ft</ar></div>
-				<div class="gomb nagy">Havi előfizetés<off>-25%</off><ar>22 500 Ft</ar></div>
-				<div class="gomb nagy" style="margin-top:5%;background:#30af30;">Korábbi vásárlások visszaállítása</div>
+				<info>Előfizetése : <span id="ELOFIZETES">- LEJÁRT -</span></info>
+				<div id="TERMEK_LISTA">
+				
+				</div>
 			</div>	
         </popup>
         

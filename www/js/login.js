@@ -171,7 +171,7 @@ function PopUp(ABLAK, modal, PARAM)
 							Ido_Timer = setInterval( function(){ Ido_Time(); },1000);
 						}
 						break;
-						
+		case "PREM" : 		bolt.listTermekek(); break;						
 	}
 }
 

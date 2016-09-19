@@ -198,6 +198,13 @@ exit {
 	text-align:right;
 	color:#dadada;
 }
+.login #ELOFIZETES {
+	float:initial;
+	display:inline-block;
+	width: 65%;
+    text-align: center;
+    color: #f1e096;
+}
 
 #TEL {
 	color : yellow;

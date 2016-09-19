@@ -5,6 +5,8 @@ var dev = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'htt
 var InitOk = false;
 var no_wifi_timer;
 
+if (dev) {var bolt = new Bolt;}			// in-app-purchase inicializálás  (vasarlas.js)
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -15,9 +17,47 @@ var app = {
     },
     onDeviceReady: function() {
     	myScroll =  new IScroll('#LOGS');
-  		Init();	
+  		if (!window.device) { Init(); }
+  		else
+  		{
+			nonRenewing.initialize({
+				verbosity: store.DEBUG,
+				products: [{
+					id: 'hu.wificaster.app.elofiz.1.1nap',
+					duration: 60
+				}, {
+					id: 'hu.wificaster.app.elofiz.1.1het',
+					duration: 420
+				}, {
+					id: 'hu.wificaster.app.elofiz.1.30nap',
+					duration: 900
+				}]
+			});
+			
+			nonRenewing.onStatusChange(function(status) {
+				if (status) {
+					document.getElementsByClassName('status')[0].innerHTML =
+						'isSubscribed: ' + status.subscriber + '\n' +
+						'expiryDate: ' + status.expiryDate + '\n';
+				}
+				else {
+					document.getElementsByClassName('status')[0].innerHTML =
+						'???';
+				}
+			});
+			
+			var button = document.getElementById('manage-subscription');
+				button.addEventListener('touchend', function(event) {
+					console.log('showMainScreen -> openSubscriptionManager');
+					event.preventDefault();
+					nonRenewing.openSubscriptionManager();
+				});
+  		}
+  			
     }
 };
+
+
 
 
 function Init()
@@ -37,7 +77,6 @@ function Init()
 	LoginInit();
 	
 	InitOk = true;
-	
 }
 
 var error=function(msg) {};
