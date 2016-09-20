@@ -46,7 +46,7 @@ var app = {
 				}
 			});
 			
-			var button = document.getElementById('manage-subscription');
+			var button = document.getElementById('kosar');
 				button.addEventListener('touchend', function(event) {
 					console.log('showMainScreen -> openSubscriptionManager');
 					event.preventDefault();
