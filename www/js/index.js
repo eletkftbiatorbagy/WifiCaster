@@ -20,12 +20,12 @@ var app = {
   		if (!dev) { Init(); }
   		else
   		{
-  			var button = document.getElementById('kosar');
-				button.addEventListener('touchend', function(event) {
-					console.log('showMainScreen -> openSubscriptionManager');
-					event.preventDefault();
-					nonRenewing.openSubscriptionManager();
-				});
+  			// var button = document.getElementById('kosar');
+// 				button.addEventListener('touchend', function(event) {
+// 					console.log('showMainScreen -> openSubscriptionManager');
+// 					event.preventDefault();
+// 					nonRenewing.openSubscriptionManager();
+// 				});
 				
 			nonRenewing.initialize({
 				verbosity: store.DEBUG,
