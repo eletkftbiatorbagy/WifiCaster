@@ -20,6 +20,13 @@ var app = {
   		if (!dev) { Init(); }
   		else
   		{
+  			var button = document.getElementById('kosar');
+				button.addEventListener('touchend', function(event) {
+					console.log('showMainScreen -> openSubscriptionManager');
+					event.preventDefault();
+					nonRenewing.openSubscriptionManager();
+				});
+				
 			nonRenewing.initialize({
 				verbosity: store.DEBUG,
 				products: [{
@@ -46,14 +53,9 @@ var app = {
 				}
 			});
 			
-			var button = document.getElementById('kosar');
-				button.addEventListener('touchend', function(event) {
-					console.log('showMainScreen -> openSubscriptionManager');
-					event.preventDefault();
-					nonRenewing.openSubscriptionManager();
-				});
+			
   		}
-  			
+  		Init();	
     }
 };
 
