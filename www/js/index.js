@@ -17,7 +17,7 @@ var app = {
     },
     onDeviceReady: function() {
     	myScroll =  new IScroll('#LOGS');
-  		if (!window.device) { Init(); }
+  		if (!dev) { Init(); }
   		else
   		{
 			nonRenewing.initialize({
