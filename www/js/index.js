@@ -5,6 +5,13 @@ var dev = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'htt
 var InitOk = false;
 var no_wifi_timer;
 
+window.onerror = function(message, url, lineNumber) {
+	var timestamp = "<time>" + t.getFullYear() + "-" + ("0" + (t.getMonth() + 1)).slice(-2) + "-" + ("0" + (t.getDate() + 1)).slice(-2) + "&nbsp;&nbsp;&nbsp" + ("0"+t.getHours()).slice(-2) + ":" + ("0"+t.getMinutes()).slice(-2) + ":" + ("0"+t.getSeconds()).slice(-2) + "</time>";
+ 	document.getElementById("logs").innerHTML += "<span style='color:red;'>"+timestamp + "</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>"+lineNumber+" : "+message + "</span><br>";	
+	return true;
+};
+
+
 if (dev) {var bolt = new Bolt;}			// in-app-purchase inicializálás  (vasarlas.js)
 
 var app = {
@@ -194,3 +201,5 @@ function VideoStop(paused)
  				document.getElementById("logs").innerHTML += "<span style='color:white;'>"+timestamp + "</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>"+message + "</span><br>";
  			};
 	})();
+	
+	
