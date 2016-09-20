@@ -3,9 +3,8 @@ var Bolt = function(){
 this.TERMEKEK = [
 					{
         				id:    "hu.wificaster.app.elofiz.1.1nap",
-        				alias: "Napijegy",
         				type:  store.NON_RENEWING_SUBSCRIPTION,
-        				kedvezmeny : ""
+        				duration : 
     				},
 					{
         				id:    "hu.wificaster.app.elofiz.1.1het",
@@ -39,6 +38,10 @@ this.TermekLista = document.getElementById("TERMEK_LISTA"),
 this.PRODUCT = [];
 
 this.showTermekek = function() {
+	this.render()	
+	
+	
+	
 	
 	for (var n=0; n< this.TERMEKEK.length; n++)
 	{

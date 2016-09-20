@@ -507,6 +507,7 @@
   };
 
   nonRenewing.openSubscriptionManager = function() {
+    console.log("Vásárlás indul");
     this.controller.openStatusView();
   };
 
